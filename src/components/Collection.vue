@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    total: {{total}}
+  <span class="highlight">{{total}}</span> objkts in <a v-bind:href="'https://www.hicetnunc.xyz/tz/' + address">{{ address }}</a>
     <div id="array-rendering">
       <div class="assets">
         <ObjktCard v-for="item in items" 
@@ -11,6 +10,7 @@
             v-bind:balance="item.balance" 
             v-bind:token_id="item.token_id"
             v-bind:thumbnail_uri="item.display_uri"
+            v-bind:creators="item.creators"
             v-bind:boughtInfos="boughtInfos[item.token_id]"/>
       </div>
     </div>

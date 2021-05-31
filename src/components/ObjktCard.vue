@@ -1,10 +1,12 @@
 <template>
   <div class="objktCard">
         <section class="objktCard__infos">
+          <div>
             <h2>{{ name }}</h2>
             <p>{{ description }}</p>
-            <div>{{ balance }}</div>
-            <a v-bind:href="'https://www.hicetnunc.xyz/objkt/' + token_id">/OBJKT/{{ token_id }}</a>
+            <div>{{ balance }} <a v-bind:href="'https://www.hicetnunc.xyz/objkt/' + token_id">/OBJKT/{{ token_id }}</a></div>
+          </div>
+          <UserCardFetch v-for="creator,index in creators" :key=index v-bind:address="creator"/>
         </section>
         <section class="objktCard__thumb" v-on:click="getSwaps">
             <img v-if="thumbnail_uri" v-bind:src="convertIPFSToHttp(thumbnail_uri)" />
@@ -23,8 +25,13 @@
 </template>
 
 <script>
+import UserCardFetch from '@/components/UserCardFetch.vue'
+
 export default {
   name: 'ObjktCard',
+  components: {
+    UserCardFetch
+  },
   props: {
     name: String,
     description: String,
@@ -41,7 +48,6 @@ export default {
   },
   methods: {
       convertIPFSToHttp: function(ipfsUrl){
-          console.log(ipfsUrl)
           let ipfsHash = ipfsUrl && ipfsUrl.replace('ipfs://','')
           return 'https://cloudflare-ipfs.com/ipfs/' + ipfsHash
       },
@@ -69,6 +75,9 @@ export default {
     &__infos{
       width: 300px;
       word-break: break-word;
+      display: flex;
+      flex-direction: column; 
+      justify-content: space-between;
     }
     &__thumb{
       position: relative;
