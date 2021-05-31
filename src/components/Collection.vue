@@ -33,6 +33,12 @@ export default {
   props: {
     address: String
   },
+  watch:{
+    address: function(){
+      this.resetData()
+      this.fetchUserTransactions()
+    }
+  },
   data: function(){
     return{
       items: [],
@@ -65,6 +71,13 @@ export default {
     loadNext: function(){
       this.offset += 10
       this.fetchCollection()
+    },
+    resetData: function(){
+      this.items = []
+      this.total = null
+      this.offset = 0
+      this.transactions = []
+      this.boughtInfos = {}
     }
   },
   mounted(){
