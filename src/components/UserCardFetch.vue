@@ -22,13 +22,13 @@ export default {
     address: String,
   },
   data: function(){
-    return{
-      alias: String,
-      description: String,
-      thumbnail_uri: String,
-      website_uri: String,
-      twitter_name: String,
-      instagram_name: String
+    return {
+      alias: "",
+      description: "",
+      thumbnail_uri: "",
+      website_uri: "",
+      twitter_name: "",
+      instagram_name: ""
     }
   },
   methods: {
