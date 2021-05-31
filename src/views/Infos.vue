@@ -2,7 +2,7 @@
   <div class="infos">
     <h2>
       to start explore a collection, type the address you want in the url. Use this format
-    <a href="/#/tz1SREjxzP3Eycw4XSDzgdMMZrys9pUidJzr">/#/tz1SREjxzP3Eycw4XSDzgdMMZrys9pUidJzr</a>
+    <a href="#/tz1SREjxzP3Eycw4XSDzgdMMZrys9pUidJzr">/#/tz1SREjxzP3Eycw4XSDzgdMMZrys9pUidJzr</a>
     </h2>
   </div>
 </template>
