@@ -42,7 +42,6 @@ export default {
           this.website_uri= json.site
           this.twitter_name= json.twitter
           this.instagram_name= json.instagram
-          console.log(this.twitter_name)
         })
         .catch(err=>{console.log(err)})
     },

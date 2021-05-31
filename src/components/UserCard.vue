@@ -37,7 +37,6 @@ export default {
   },
   methods: {
       getThumbUri: function(address){
-          console.log(address)
           return 'https://services.tzkt.io/v1/avatars2/' + address
       },
   }
