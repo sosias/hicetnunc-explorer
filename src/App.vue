@@ -1,8 +1,9 @@
 <template>
-  <div id="nav">
+  <h1 class="main_title">H=XPLOR</h1>
+  <!-- <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
-  </div>
+  </div> -->
   <router-view/>
 </template>
 
@@ -24,5 +25,9 @@
       color: #fff;
     }
   }
+}
+
+.main_title{
+  margin-top: 0px;
 }
 </style>

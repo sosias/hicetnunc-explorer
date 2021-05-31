@@ -1,6 +1,8 @@
 <template>
-  <div class="hello">
-  <span class="highlight">{{total}}</span> objkts in <a v-bind:href="'https://www.hicetnunc.xyz/tz/' + address">{{ address }}</a>
+  <div class="collection">
+    <div class="collection__header">
+      <span class="highlight">{{total}}</span> objkts in <a v-bind:href="'https://www.hicetnunc.xyz/tz/' + address">{{ address }}</a>
+    </div>
     <div id="array-rendering">
       <div class="assets">
         <ObjktCard v-for="item in items" 
@@ -87,5 +89,10 @@ li {
 .assets{
   display: flex;
   flex-wrap: wrap;
+}
+
+.collection__header {
+    padding-top: 16px;
+    padding-bottom: 32px;
 }
 </style>
