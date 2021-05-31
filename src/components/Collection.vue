@@ -29,7 +29,7 @@ export default {
     ObjktCard
   },
   props: {
-    msg: String
+    address: String
   },
   data: function(){
     return{
@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     fetchCollection: function(){
-      fetch('https://api.better-call.dev/v1/account/mainnet/tz1TWSNS44pKian45zE9c1baa3x7hihBAzm2/token_balances?offset=' + this.offset)
+      fetch('https://api.better-call.dev/v1/account/mainnet/'+this.address+'/token_balances?offset=' + this.offset)
         .then(resp=>resp.json())
         .then(json=>{
           this.items.push(...json.balances)
@@ -51,7 +51,7 @@ export default {
         .catch(err=>{console.log(err)})
     },
     fetchUserTransactions: function(){
-      getObjktBoughtPrice('tz1TWSNS44pKian45zE9c1baa3x7hihBAzm2')
+      getObjktBoughtPrice(this.address)
         .then(boughtInfosTmp=>{
           this.boughtInfos = boughtInfosTmp
         })

@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <h1>H=XPLOR</h1>
-    <Collection />
+
+    <Collection v-bind:address="$route.params.address" />
   </div>
 </template>
 
