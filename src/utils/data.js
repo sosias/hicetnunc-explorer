@@ -44,7 +44,6 @@ function getObjktBoughtPrice(userAddress){
                     })
                 }
             }
-            console.log(groupedTokenId)
             return groupedTokenId
         })
         //.catch(err=>{console.log(err)})
