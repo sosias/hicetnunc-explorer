@@ -12,3 +12,23 @@ a{
     // }
 
 }
+
+button{
+    color: $color-base;
+    background-color: $color-secondary;
+    border: none;
+    cursor: pointer;
+    border-radius: 0%;
+    &:hover{
+        color: $color-secondary;
+        background-color: $color-base;
+    }
+    &:focus{
+        border: 1px solid #fff2;
+        outline: 1px solid #fff2;
+    }
+    &:active{
+        border: 1px solid #fff2;
+        outline: 1px solid #fff2;
+    }
+}

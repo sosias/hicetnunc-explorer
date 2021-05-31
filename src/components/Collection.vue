@@ -14,7 +14,7 @@
             v-bind:boughtInfos="boughtInfos[item.token_id]"/>
       </div>
     </div>
-    <h1 v-if="items.length<total" v-on:click="loadNext">VVV</h1>
+    <button v-if="items.length<total" v-on:click="loadNext"><h1>VVV</h1></button>
   </div>
 </template>
 
@@ -83,9 +83,6 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
-}
-a {
-  color: #42b983;
 }
 .assets{
   display: flex;
