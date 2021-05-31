@@ -18,7 +18,7 @@
         </section>
         <section class="objktCard__boughtInfos">
             <div v-for="item,index in boughtInfos" :key=index>
-              <span>{{item.amount.tezos/1000000}}</span> <small>{{item.timestamp.substring(2, 10)}}</small>
+              <span v-if="item.amount">{{item.amount.tezos/1000000}}</span> <small v-if="item.amount">{{item.timestamp.substring(2, 10)}}</small>
             </div>
         </section>
   </div>
