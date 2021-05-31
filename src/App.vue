@@ -1,10 +1,16 @@
 <template>
-  <h1 class="main_title">H=XPLOR</h1>
-  <!-- <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div> -->
-  <router-view/>
+  <div class="main">
+    <h1 class="main_title">H=XPLOR</h1>
+    <!-- <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div> -->
+    <router-view/>
+
+    <footer>
+      <a href="https://github.com/...">github</a> / <a href="https://tzkt.io/">Powered by TzKT API</a>
+    </footer>
+  </div>  
 </template>
 
 <style lang="scss">
@@ -31,5 +37,16 @@
 
 .main_title{
   margin-top: 0px;
+}
+
+.main{
+  position: relative;
+  min-height: 100%;
+}
+
+footer{
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 </style>
