@@ -14,7 +14,8 @@
             <div class="label" v-if="balance==0">listed</div>
         </section>
         <section class="objktCard__swaps">
-            <div v-for="swap,index in swaps" :key=index>{{swap}}</div>
+          <div v-if="loading" class="loading pulsate-fwd" />
+          <div v-for="swap,index in swaps" :key=index>{{swap}}</div>
         </section>
         <section class="objktCard__boughtInfos">
             <div v-for="item,index in boughtInfos" :key=index>
@@ -44,6 +45,7 @@ export default {
   data: function(){
     return{
       swaps: [],
+      loading: false
     }
   },
   methods: {
@@ -52,12 +54,14 @@ export default {
           return 'https://cloudflare-ipfs.com/ipfs/' + ipfsHash
       },
       getSwaps: function(){
+        this.loading=true
         fetch('https://51rknuvw76.execute-api.us-east-1.amazonaws.com/dev/objkt?id='+this.token_id)
           .then(resp=>resp.json())
           .then(json=>{
             this.swaps = json.result.swaps.map((item)=>{return item.xtz_per_objkt/1000000}).sort((a,b)=>a-b)
           })
           .catch(err=>{console.log(err)})
+          .finally(()=>{this.loading=false})
       },
   },
   mounted(){
@@ -115,5 +119,48 @@ export default {
       bottom: 18px;
       right: -5px;
     }
+
+    .loading{
+      background-color: #c6538c;
+      height: 30px;
+      width: 20px;
+      
+    }
+
+    .pulsate-fwd {
+      -webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
+              animation: pulsate-fwd 1s ease-in-out infinite both;
+    }
+
+    @-webkit-keyframes pulsate-fwd {
+      0% {
+        -webkit-transform: scale(0.8);
+                transform: scale(0.8);
+      }
+      50% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+      }
+      100% {
+        -webkit-transform: scale(0.8);
+                transform: scale(0.8);
+      }
+    }
+    @keyframes pulsate-fwd {
+      0% {
+        -webkit-transform: scale(0.8);
+                transform: scale(0.8);
+      }
+      50% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+      }
+      100% {
+        -webkit-transform: scale(0.8);
+                transform: scale(0.8);
+      }
+    }
+
+
 }
 </style>
