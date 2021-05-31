@@ -13,7 +13,6 @@
             <img v-if="address" v-bind:src="getThumbUri(address)" />
             <div v-else class="userCard__placeholder">No thumb</div>
           </a>
-            <div class="label" v-if="balance==0">listed</div>
         </section>
   </div>
 </template>
