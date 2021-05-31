@@ -2,7 +2,7 @@
 
 simple tool to get an overview of a [hicetnunc.xyz](https://hicetnunc.xyz) collection
 
-live site ...
+go to the tool [https://sosias.github.io/hicetnunc-explorer](https://sosias.github.io/hicetnunc-explorer) 
 ## current features
 
 visible on one page:

@@ -8,7 +8,7 @@
     <router-view/>
 
     <footer>
-      <a href="https://github.com/...">github</a> / <a href="https://tzkt.io/">Powered by TzKT API</a>
+      <a href="https://github.com/sosias/hicetnunc-explorer">github</a> / <a href="https://tzkt.io/">Powered by TzKT API</a>
     </footer>
   </div>  
 </template>
