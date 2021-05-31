@@ -1,11 +1,18 @@
 html{
     color: $color-primary;
     background-color: $color-base;
+    height: 100%;
+}
+
+body{
+    height: 100%;
 }
 
 a{
     color: $color-secondary;
-    // &:hover{}
+    &:hover{
+        color: $color-primary;
+    }
     // &:active{}
     // &:visited{
 
@@ -37,4 +44,11 @@ button{
     background-color: #c6538c;
     padding: 3px;
     color: #171717;
+}
+
+body{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: left;
 }
