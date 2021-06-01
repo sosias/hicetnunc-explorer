@@ -1,6 +1,8 @@
 <template>
   <div class="main">
     <h1 class="main_title">H=XPLOR</h1>
+    <small>still a work in progress!!! RAW and buggy! be careful</small>
+    
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -42,6 +44,10 @@
 .main{
   position: relative;
   min-height: 100%;
+}
+
+h1{
+  display: inline;
 }
 
 footer{
